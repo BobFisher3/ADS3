@@ -24,10 +24,8 @@ int main()
     }
     file >> size;
     while (file >> inputData) {
-        //if (inputData != size) {
             root = avl.insert(root, inputData);
             counter++;
-       // }
     }
 
     if (counter != size) {
@@ -36,7 +34,6 @@ int main()
     }
 
     file.close();
-   // avl.printBFS(root);
     avl.printBFS(root);
 
     return 0;
