@@ -3,9 +3,8 @@
 
 using namespace std;
 
-//AVL Tree Node
-class Node
-{
+//AVL Tree Node Class
+class Node {
 public:
     Node* left;
     Node* right;

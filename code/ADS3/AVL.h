@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 #include<queue>
-#include "Node.h"
 #include <fstream>
+#include "Node.h"
+
 
 using namespace std;
 
@@ -10,12 +11,11 @@ using namespace std;
 class AVL
 {
 public:
-
     //Function to get height of the tree
     int getHeight(Node* node) {
-        if (node == nullptr)
+        if (node == nullptr) {
             return 0;
-
+        }       
         return node->height;
     }
 
@@ -127,10 +127,13 @@ public:
                 Node* node = nMem.front();
                 rFile << node->value << " ";
                 nMem.pop();
-                if (node->left != NULL)
+                if (node->left != NULL) {
                     nMem.push(node->left);
-                if (node->right != NULL)
+                }
+                    
+                if (node->right != NULL) {
                     nMem.push(node->right);
+                } 
                 nCount--; 
             }
             lineC++;

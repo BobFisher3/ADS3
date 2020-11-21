@@ -51,6 +51,7 @@ int main() {
     vector<int> inputVectorQ2;
     //Open file
     ifstream fileQ2("input-q2a2.txt");
+
     //Error Handling
     if (!fileQ2) {
         cout << "There was an error opening the file." << endl;
@@ -62,10 +63,11 @@ int main() {
         return 0;
     }
 
-    //store file in vector
+    //Store file in vector
     int checkSize;
     fileQ2 >> checkSize;
-    //fill vector with file data
+
+    //Fill vector with file data
     while (fileQ2 >> inputDataQ2) {
         inputVectorQ2.push_back(inputDataQ2);
     }
@@ -80,9 +82,6 @@ int main() {
         heap.Insert(inputVectorQ2[a]);
     }
     heap.printHeap();
-
-
-
 
     return 0;
 }
