@@ -32,6 +32,7 @@ public:
             return new Node(value);
         }
 
+        //Insert element to right side if right has lesser elements than left
         if (root->value < value) {
             root->right = insert(root->right, value);
         }
@@ -120,12 +121,11 @@ public:
             //nCount counts how many elements at the current level 
             int nCount = nMem.size();
             rFile << lineC << ": ";
-            cout << lineC << ": ";
+
             //Dequeue all nodes of current level and Enqueue all nodes of next level  
             while (nCount > 0) {
                 Node* node = nMem.front();
                 rFile << node->value << " ";
-                cout << node->value << " ";
                 nMem.pop();
                 if (node->left != NULL)
                     nMem.push(node->left);
@@ -135,7 +135,6 @@ public:
             }
             lineC++;
             rFile << endl;
-            cout << endl;
         }
         rFile.close();
     }
